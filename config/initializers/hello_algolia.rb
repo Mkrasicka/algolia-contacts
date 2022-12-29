@@ -1,11 +1,11 @@
 AlgoliaSearch.configuration = {
-  application_id: 'JRUQPJAEYY',
-  api_key: '03691ba34b692134860d626803f8f8df'
+  application_id: ENV['ALGOLIASEARCH_APPLICATION_ID'],
+  api_key: ENV['ALGOLIASEARCH_API_KEY_SEARCH']
 }
 
 AlgoliaSearch.configuration = {
-  application_id: 'JRUQPJAEYY',
-  api_key: '03691ba34b692134860d626803f8f8df',
+  application_id: ENV['ALGOLIASEARCH_APPLICATION_ID'],
+  api_key: ENV['ALGOLIASEARCH_API_KEY_SEARCH'],
   connect_timeout: 2,
   receive_timeout: 30,
   send_timeout: 30,
