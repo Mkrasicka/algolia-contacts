@@ -1,0 +1,47 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-sm-12">
+      <%= form_with url: contacts_path, method: :get, class: "d-flex my-3" do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placeholder: "Find a contact"
+        %>
+        <%= submit_tag "Search", class: "btn btn-primary" %>
+      <% end %>
+
+      <table>
+        <thead>
+          <tr>
+            <th>First name</th>
+            <th>Last name</th>
+            <th>Company</th>
+            <th>State</th>
+            <th>Zip</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>Web</th>
+            <th colspan="3"></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @contacts.each do |contact| %>
+            <tr>
+              <td><%= contact.firstname %></td>
+              <td><%= contact.lastname %></td>
+              <td><%= contact.company %></td>
+              <td><%= contact.state %></td>
+              <td><%= contact.zip %></td>
+              <td><%= contact.phone %></td>
+              <td><%= contact.email %></td>
+              <td><%= contact.web %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+
+      <br>
+    </div>
+  </div>
+</div>
