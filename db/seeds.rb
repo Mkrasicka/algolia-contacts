@@ -5,3 +5,18 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Contact.delete_all
+# Contact.clear_index!
+# Contact.without_auto_index do
+#   JSON.load(File.new("#{Rails.root}/db/contacts.json")).each do |c|
+#     Contact.create c
+#   end
+# end
+# Contact.reindex!
+
+JSON.parse(File.read("#{Rails.root}/db/migrate/contacts.json")).each do |a|
+  Contact.create(a)
+end
+
+puts "created"
